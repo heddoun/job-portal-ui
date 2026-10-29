@@ -7,6 +7,9 @@ const COOKIE_POLICY_TEXT =
 const TERMS_OF_SERVICE_TEXT =
   "By using JobPortal you agree to provide accurate information, post only genuine job listings and applications, and respect other users. We may suspend accounts that misuse the platform.";
 
+const PRIVACY_POLICY_TEXT =
+  "Your account details, applications and saved jobs are stored only in your browser using essential cookies and local storage. We never sell or share your personal data with third parties.";
+
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
@@ -148,10 +151,15 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-400 mb-6 md:mb-0">
-              <a className="group relative hover:text-white transition-colors duration-300">
-                <span className="relative z-10">Privacy Policy</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
-              </a>
+              <Tooltip title="Privacy Policy" content={PRIVACY_POLICY_TEXT}>
+                <button
+                  type="button"
+                  className="group relative hover:text-white focus:text-white focus:outline-none transition-colors duration-300"
+                >
+                  <span className="relative z-10">Privacy Policy</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 -inset-2"></div>
+                </button>
+              </Tooltip>
               <Tooltip title="Terms of Service" content={TERMS_OF_SERVICE_TEXT}>
                 <button
                   type="button"

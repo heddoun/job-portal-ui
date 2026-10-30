@@ -10,6 +10,9 @@ const TERMS_OF_SERVICE_TEXT =
 const PRIVACY_POLICY_TEXT =
   "Your account details, applications and saved jobs are stored only in your browser using essential cookies and local storage. We never sell or share your personal data with third parties.";
 
+const CONTACT_US_TEXT =
+  "Having a problem or need help? Click to open the contact page and send a message to our admin team describing the issue you're facing.";
+
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
@@ -178,13 +181,15 @@ const Footer = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 -inset-2"></div>
                 </button>
               </Tooltip>
-              <Link
-                to="/contact"
-                className="group relative hover:text-white transition-colors duration-300"
-              >
-                <span className="relative z-10">Contact Us</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
-              </Link>
+              <Tooltip title="Contact Us" content={CONTACT_US_TEXT}>
+                <Link
+                  to="/contact"
+                  className="group relative hover:text-white focus:text-white focus:outline-none transition-colors duration-300"
+                >
+                  <span className="relative z-10">Contact Us</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 -inset-2"></div>
+                </Link>
+              </Tooltip>
             </div>
             <div className="text-center md:text-right">
               <div className="text-gray-400 text-sm mb-2">

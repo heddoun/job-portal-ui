@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -7,24 +8,26 @@ import { JobsDataProvider } from "./contexts/JobsDataContext";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./pages/Home";
-import Jobs from "./pages/Jobs";
-import JobDetail from "./pages/JobDetail";
-import Companies from "./pages/Companies";
-import CompanyDetail from "./pages/CompanyDetail";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import AppliedJobs from "./pages/AppliedJobs";
-import SavedJobs from "./pages/SavedJobs";
-import PostJob from "./pages/PostJob";
-import MyJobs from "./pages/MyJobs";
-import JobApplicants from "./pages/JobApplicants";
-import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
-import Dashboard from "./pages/admin/Dashboard";
-import CompanyManagement from "./pages/admin/CompanyManagement";
-import EmployerManagement from "./pages/admin/EmployerManagement";
-import ContactMessages from "./pages/admin/ContactMessages";
+// Pages are code-split: each chunk loads on first navigation.
+// The <Suspense> boundary lives in Layout (around <Outlet />).
+const Home = lazy(() => import("./pages/Home"));
+const Jobs = lazy(() => import("./pages/Jobs"));
+const JobDetail = lazy(() => import("./pages/JobDetail"));
+const Companies = lazy(() => import("./pages/Companies"));
+const CompanyDetail = lazy(() => import("./pages/CompanyDetail"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const AppliedJobs = lazy(() => import("./pages/AppliedJobs"));
+const SavedJobs = lazy(() => import("./pages/SavedJobs"));
+const PostJob = lazy(() => import("./pages/PostJob"));
+const MyJobs = lazy(() => import("./pages/MyJobs"));
+const JobApplicants = lazy(() => import("./pages/JobApplicants"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
+const CompanyManagement = lazy(() => import("./pages/admin/CompanyManagement"));
+const EmployerManagement = lazy(() => import("./pages/admin/EmployerManagement"));
+const ContactMessages = lazy(() => import("./pages/admin/ContactMessages"));
 
 function App() {
   return (

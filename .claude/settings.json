@@ -48,5 +48,6 @@
         ]
       }
     ]
-  }
+  },
+  "disabledMcpjsonServers": ["chrome-devtools","playwright","context7"]
 }
